@@ -352,35 +352,3 @@ body {
     }
   }
 }
-
-.red-block {
-  .data:nth-child(even) {
-    .dataContent_red {
-      order: 1;
-    }
-    .dataImg {
-      order: 2;
-    }
-  }
-  @include media(">=768px") {
-    .data:nth-child(even) {
-      .dataContent_red {
-        order: 2;
-      }
-      .dataImg {
-        order: 1;
-      }
-    }
-  }
-
-  @include media(">=768px") {
-    .data:nth-child(even) {
-      .dataContent_red_second {
-        order: 2;
-      }
-      .dataImg {
-        order: 1;
-      }
-    }
-  }
-}
