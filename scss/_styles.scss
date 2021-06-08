@@ -22,6 +22,58 @@ body {
   }
 }
 
+.description {
+  display: block;
+  position: absolute;
+  top: 4.5%;
+  left: 2%;
+  z-index: 5;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: #fff;
+
+  @include media(">=768px") {
+    font-size: 30px;
+    top: 14%;
+    left: 4%;
+  }
+
+  @include media(">=1180px") {
+    font-size: 40px;
+    top: 21%;
+    left: 6%;
+  }
+
+  .under_desc {
+    display: block;
+    padding-top: 10px;
+    padding-left: 50px;
+    font-size: 15px;
+    @include media(">=768px") {
+      padding-left: 150px;
+    }
+
+    @include media(">=1180px") {
+      padding-left: 200px;
+    }
+  }
+  .green {
+    font-size: 20px;
+    color: $atlantis;
+    @include media(">=768px") {
+      font-size: 30px;
+    }
+
+    @include media(">=1180px") {
+      font-size: 40px;
+    }
+  }
+  .red {
+    font-size: 15px;
+    color: $persimmon;
+  }
+}
+
 .img-wrapper {
   display: block;
 }
@@ -51,9 +103,30 @@ body {
   }
 
   .logo {
+    display: block;
+    text-transform: uppercase;
     font-size: 24px;
     color: $white;
-    margin-left: 20px;
+    margin-left: 90px;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      background: url(../images/svg/ico_fitness_logo.svg);
+      width: 35px;
+      height: 52px;
+      top: -5px;
+      left: -48px;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      height: 3px;
+      width: 38px;
+      background: $atlantis;
+      top: 29px;
+      left: 2px;
+    }
   }
 
   .nav {
@@ -87,6 +160,9 @@ body {
       font-size: 13px;
       line-height: 30px;
     }
+    a:hover {
+      color: aqua;
+    }
   }
 }
 
@@ -95,7 +171,7 @@ body {
 .green-block {
   background: $atlantis;
   .main-links {
-    margin-top: 50px;
+    padding-top: 70px;
     display: flex;
     justify-content: center;
 
@@ -116,7 +192,7 @@ body {
     }
   }
   .main-link-block {
-    margin-top: 50px;
+    margin-top: 90px;
     height: 210px;
     width: 275px;
     position: relative;
@@ -134,7 +210,25 @@ body {
     }
 
     h2.resources::before {
-      background: url(../images/sprite/sprite.svg#ico-resources) no-repeat;
+      background: url(../images/svg/ico_resources.svg);
+      width: 44px;
+      height: 40px;
+    }
+
+    h2.training::before {
+      background: url(../images/svg/ico_training.svg);
+      width: 43.5px;
+      height: 43px;
+    }
+
+    h2.connect::before {
+      background: url(../images/svg/ico_connect.svg);
+      width: 47px;
+      height: 33px;
+    }
+
+    h2.communicate::before {
+      background: url(../images/svg/ico_communicate.svg);
       width: 44px;
       height: 41px;
     }
@@ -150,6 +244,9 @@ body {
       font-size: 14px;
       color: $white;
       bottom: 0;
+    }
+    a.even_link {
+      padding-top: 25px;
     }
   }
 }
@@ -196,7 +293,19 @@ body {
       font: 300 35px "Open Sans", sans-serif;
       color: $atlantis;
       margin-bottom: 60px;
+      position: relative;
     }
+
+    .headline__green::after {
+      content: "";
+      position: absolute;
+      top: 55px;
+      left: 186px;
+      background: url(../images/svg/ico_drop_grey.svg);
+      width: 18px;
+      height: 26px;
+    }
+
     p {
       display: block;
       text-align: center;
@@ -239,6 +348,19 @@ body {
 
 .red-block {
   background: $persimmon;
+  .data_row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    @include media(">=768px") {
+      flex-wrap: nowrap;
+    }
+    @include media(">=1180px") {
+      width: 1180px;
+      height: 639px;
+      margin: auto;
+    }
+  }
   .data {
     background: $white;
     display: flex;
@@ -259,17 +381,56 @@ body {
         width: 100%;
       }
     }
+    .data__col_sm {
+      background: $white;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      @include media(">=768px") {
+      }
+      @include media(">=1180px") {
+        width: 401px;
+        height: 639px;
+      }
+      .img-wrapper {
+        //display: block;
+        // overflow: hidden;
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+    .data__col_lg {
+      background: $white;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      @include media(">=768px") {
+      }
+      @include media(">=1180px") {
+        width: 780px;
+      }
+      .img-wrapper {
+        height: 330px;
+        // overflow: hidden;
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
   }
   .dataContent_red {
     background: $white;
-    width: 400px;
+    width: 401px;
     height: 309px;
     span {
       display: block;
       text-align: left;
       text-transform: uppercase;
       color: $persimmon;
-      margin-top: 50px;
+      padding-top: 50px;
       margin-bottom: 10px;
       padding-left: 40px;
     }
